@@ -29,7 +29,7 @@ def test_draw_a_picture():
     print('###################################################')
     print('Test 1 of draw_a_picture.')
     print('Called with point1 =', point1)
-    print( 'n =', n, ' color = blue')
+    print('n =', n, ' color = blue')
     print('###################################################')
     draw_a_picture(point1, n, 'blue', test_window)
 
@@ -39,7 +39,7 @@ def test_draw_a_picture():
     print('###################################################')
     print('Test 2 of draw_a_picture.')
     print('Called with point2 =', point2)
-    print( 'n =', n, ' color = green')
+    print('n =', n, ' color = green')
     print('###################################################')
     draw_a_picture(point2, n, 'green', test_window)
     test_window.close_on_mouse_click()
@@ -80,7 +80,7 @@ def test_draw_a_picture():
 #   The is_prime function is supplied.  Do NOT change is_prime
 #     """
 ###############################################################################
-# TODO: 1  READ the doc-string for the is_prime function defined below.
+# DONE: 1  READ the doc-string for the is_prime function defined below.
 # You do NOT need to understand its implementations,
 # just its specification (per the doc-string).
 # You should  ** CALL **  functions as needed in implementing the
@@ -125,11 +125,24 @@ def is_prime(n):
 ############################################################################
 # -------------------------------------------------------------------------
 #
-#
-#
+
+
 def draw_a_picture(point, n, color, window):
+    e = rg.Circle(point, 100)
+    r = rg.Rectangle()
 
-    pass
+    e.attach_to(window)
+    window.render(0.5)
 
+"""Draws an rg.Circle with the given point as the center.
+The radius of the rg.Circle is 100 pixels
+Draws an rg.Rectangle with the given point as the center.
+The width of the Rectangle is 160 pixels and the height is 80 pixels
+Draws n lines from the Center of the Rectangle to the top line
+of the Rectangle that are equally spaced
+The color is used as the line colors unless the number of the line
+is prime.  If the number of the line is prime,
+the color should be 'orange'. The fist line drawn should be
+the color given because one is not considered prime."""
 
 main()
