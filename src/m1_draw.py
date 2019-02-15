@@ -129,20 +129,26 @@ def is_prime(n):
 
 def draw_a_picture(point, n, color, window):
     e = rg.Circle(point, 100)
-    r = rg.Rectangle()
-
+    r = rg.Rectangle(rg.Point(point.x-80, point.y+40), rg.Point(point.x+80, point.y-40))
     e.attach_to(window)
+    r.attach_to(window)
+    for k in range(n):
+        f = rg.Line(point, rg.Point(point.x-80+((160/(n-1))*k), point.y-40))
+        if is_prime(k+1) is True:
+            f.color = 'orange'
+        else:
+            f.color = color
+        f.attach_to(window)
     window.render(0.5)
 
-"""Draws an rg.Circle with the given point as the center.
-The radius of the rg.Circle is 100 pixels
-Draws an rg.Rectangle with the given point as the center.
+"""
 The width of the Rectangle is 160 pixels and the height is 80 pixels
 Draws n lines from the Center of the Rectangle to the top line
 of the Rectangle that are equally spaced
 The color is used as the line colors unless the number of the line
 is prime.  If the number of the line is prime,
 the color should be 'orange'. The fist line drawn should be
-the color given because one is not considered prime."""
+the color given because one is not considered prime.
+"""
 
 main()
